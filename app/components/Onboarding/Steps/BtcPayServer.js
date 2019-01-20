@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import get from 'lodash.get'
 import { Bar, Form, Header, TextArea } from 'components/UI'
 import messages from './messages'
 
 class BtcPayServer extends React.Component {
   static propTypes = {
+    intl: intlShape.isRequired,
     wizardApi: PropTypes.object,
     wizardState: PropTypes.object,
     connectionString: PropTypes.string.isRequired,

@@ -5,11 +5,12 @@ import copy from 'copy-to-clipboard'
 import { Box, Flex } from 'rebass'
 import { Bar, Button, Heading, Header, Panel, QRCode, Text } from 'components/UI'
 import { showNotification } from 'lib/utils/notifications'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import messages from './messages'
 
 class Syncing extends Component {
   static propTypes = {
+    intl: intlShape.isRequired,
     address: PropTypes.string.isRequired,
     hasSynced: PropTypes.bool,
     syncStatus: PropTypes.string.isRequired,

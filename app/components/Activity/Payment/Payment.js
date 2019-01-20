@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Box, Flex } from 'rebass'
 import { btc } from 'lib/utils'
 import { Message, Span, Text, Value } from 'components/UI'
-import { FormattedMessage, FormattedNumber, FormattedTime, injectIntl } from 'react-intl'
+import { FormattedMessage, FormattedNumber, FormattedTime, intlShape, injectIntl } from 'react-intl'
 import messages from './messages'
 
 const Payment = ({
@@ -103,7 +103,7 @@ Payment.propTypes = {
   currentTicker: PropTypes.object.isRequired,
   nodes: PropTypes.array.isRequired,
   showActivityModal: PropTypes.func.isRequired,
-  intl: PropTypes.object.isRequired
+  intl: intlShape.isRequired
 }
 
 export default injectIntl(Payment)

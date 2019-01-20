@@ -80,6 +80,13 @@ const itemToString = item => (item ? item.value : '')
 class Select extends React.PureComponent {
   static displayName = 'Select'
 
+  static propTypes = {
+    items: PropTypes.array,
+    theme: PropTypes.object.isRequired,
+    fieldApi: PropTypes.object.isRequired,
+    fieldState: PropTypes.object.isRequired
+  }
+
   static defaultProps = {
     items: []
   }

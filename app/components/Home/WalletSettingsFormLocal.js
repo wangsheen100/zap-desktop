@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { Box, Flex } from 'rebass'
 import { Bar, Button, DataRow, Form, Input, Label, Range, Text, Toggle } from 'components/UI'
 import * as yup from 'yup'
@@ -8,6 +8,7 @@ import messages from './messages'
 
 class WalletSettingsFormLocal extends React.Component {
   static propTypes = {
+    intl: intlShape.isRequired,
     wallet: PropTypes.object.isRequired,
     startLnd: PropTypes.func.isRequired
   }

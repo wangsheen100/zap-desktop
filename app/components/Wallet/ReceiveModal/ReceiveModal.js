@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import copy from 'copy-to-clipboard'
 import { withTheme } from 'styled-components'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { showNotification } from 'lib/utils/notifications'
 import { Box, Flex } from 'rebass'
 import { Button, Heading, Modal, QRCode, Text } from 'components/UI'
@@ -177,6 +177,7 @@ class ReceiveModal extends React.Component {
 }
 
 ReceiveModal.propTypes = {
+  intl: intlShape.isRequired,
   network: PropTypes.shape({
     name: PropTypes.string
   }).isRequired,

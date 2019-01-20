@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import debounce from 'lodash.debounce'
-import { FormattedMessage, injectIntl, FormattedDate } from 'react-intl'
+import { FormattedMessage, FormattedDate, intlShape, injectIntl } from 'react-intl'
 import { Box, Flex } from 'rebass'
 import { Bar, Button, Form, Heading, Input, Panel, Spinner, Tabs } from 'components/UI'
 import Search from 'components/Icon/Search'
@@ -221,7 +221,8 @@ Activity.propTypes = {
   balance: PropTypes.object.isRequired,
   walletProps: PropTypes.object.isRequired,
 
-  currencyName: PropTypes.string
+  currencyName: PropTypes.string,
+  intl: intlShape.isRequired
 }
 
 export default injectIntl(Activity)

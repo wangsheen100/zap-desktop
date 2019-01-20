@@ -13,11 +13,12 @@ import {
   Span,
   Text
 } from 'components/UI'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import messages from './messages'
 
 class SubmitChannelForm extends React.Component {
   static propTypes = {
+    intl: intlShape.isRequired,
     /** Current ticker data as provided by blockchain.info */
     currentTicker: PropTypes.object.isRequired,
     /** Currently selected cryptocurrency (key). */

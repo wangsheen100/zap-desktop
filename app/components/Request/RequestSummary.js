@@ -1,7 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Flex } from 'rebass'
-import { FormattedMessage, FormattedRelative, FormattedTime, injectIntl } from 'react-intl'
+import {
+  FormattedMessage,
+  FormattedRelative,
+  FormattedTime,
+  intlShape,
+  injectIntl
+} from 'react-intl'
 import { decodePayReq } from 'lib/utils/crypto'
 import { showNotification } from 'lib/utils/notifications'
 import copy from 'copy-to-clipboard'
@@ -16,6 +22,7 @@ class RequestSummary extends React.Component {
   }
 
   static propTypes = {
+    intl: intlShape.isRequired,
     /** Currently selected cryptocurrency (key). */
     cryptoCurrency: PropTypes.string.isRequired,
     /** List of supported cryptocurrencies. */

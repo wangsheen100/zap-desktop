@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedNumber, FormattedTime, FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedNumber, FormattedTime, FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { Box, Flex } from 'rebass'
 import { btc } from 'lib/utils'
 import { Message, Span, Text, Value } from 'components/UI'
@@ -99,6 +99,7 @@ const Transaction = ({
 )
 
 Transaction.propTypes = {
+  intl: intlShape.isRequired,
   transaction: PropTypes.object.isRequired,
   ticker: PropTypes.object.isRequired,
   currentTicker: PropTypes.object.isRequired,

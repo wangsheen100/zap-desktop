@@ -9,6 +9,7 @@ class ConnectionType extends React.Component {
     wizardApi: PropTypes.object,
     wizardState: PropTypes.object,
     lndConnect: PropTypes.object,
+    connectionType: PropTypes.string,
 
     resetOnboarding: PropTypes.func.isRequired,
     setConnectionType: PropTypes.func.isRequired,

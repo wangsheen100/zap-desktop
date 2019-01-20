@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { keyframes } from 'styled-components'
 import Spinner from 'components/Icon/Spinner'
 import system from '@rebass/components'
@@ -39,10 +40,7 @@ const WrappedSpinner = ({ element, size, ...rest }) => {
     sizeProps.height = size
   }
 
-  let Icon = Spinner
-  if (element) {
-    Icon = element
-  }
+  const Icon = element
 
   const Element = renderSpinner(Icon)
   return (
@@ -50,6 +48,16 @@ const WrappedSpinner = ({ element, size, ...rest }) => {
       <Element {...sizeProps} />
     </Wrapper>
   )
+}
+
+WrappedSpinner.propTypes = {
+  element: PropTypes.any,
+  size: PropTypes.string
+}
+
+WrappedSpinner.defaultProps = {
+  element: Spinner,
+  size: '1em'
 }
 
 export default WrappedSpinner

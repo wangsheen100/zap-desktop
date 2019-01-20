@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Flex } from 'rebass'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { convert } from 'lib/utils/btc'
 import {
   Bar,
@@ -59,7 +59,8 @@ class Request extends React.Component {
     /** Set the current fiat currency */
     setFiatCurrency: PropTypes.func.isRequired,
     /** Create an invoice using the supplied details */
-    createInvoice: PropTypes.func.isRequired
+    createInvoice: PropTypes.func.isRequired,
+    intl: intlShape.isRequired
   }
 
   static defaultProps = {

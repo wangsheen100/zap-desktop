@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl } from 'react-intl'
 import { Box } from 'rebass'
 import { Bar, DataRow, Form, Input, Label, Text } from 'components/UI'
 import messages from './messages'
 
 class WalletSettingsFormRemote extends React.Component {
   static propTypes = {
+    intl: intlShape.isRequired,
     wallet: PropTypes.object.isRequired,
     startLnd: PropTypes.func.isRequired
   }

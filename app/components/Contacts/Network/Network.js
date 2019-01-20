@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import debounce from 'lodash.debounce'
-import { injectIntl } from 'react-intl'
+import { intlShape, injectIntl } from 'react-intl'
 import { Box } from 'rebass'
 
 import blockExplorer from 'lib/utils/blockExplorer'
@@ -303,7 +303,8 @@ Network.propTypes = {
   updateChannelSearchQuery: PropTypes.func.isRequired,
   setSelectedChannel: PropTypes.func.isRequired,
   closeChannel: PropTypes.func.isRequired,
-  currencyName: PropTypes.string
+  currencyName: PropTypes.string,
+  intl: intlShape.isRequired
 }
 
 export default injectIntl(Network)

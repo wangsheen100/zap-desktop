@@ -6,7 +6,8 @@ class WalletRecover extends React.Component {
   static propTypes = {
     wizardApi: PropTypes.object,
     wizardState: PropTypes.object,
-    recoverOldWallet: PropTypes.func.isRequired
+    recoverOldWallet: PropTypes.func.isRequired,
+    setWalletRecover: PropTypes.func.isRequired
   }
 
   static defaultProps = {
@@ -28,14 +29,7 @@ class WalletRecover extends React.Component {
   }
 
   render() {
-    const {
-      wizardApi,
-      wizardState,
-      autopilot,
-      setWalletRecover,
-      recoverOldWallet,
-      ...rest
-    } = this.props
+    const { wizardApi, wizardState, setWalletRecover, recoverOldWallet, ...rest } = this.props
     const { getApi, onChange, onSubmit, onSubmitFailure } = wizardApi
     const { currentItem } = wizardState
     return (

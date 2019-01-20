@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Flex } from 'rebass'
 import { Button } from 'components/UI'
 
-const ActionBar = ({ isOpen, buttons, ...rest }) => {
+const ActionBar = ({ buttons, ...rest }) => {
   const buttonsLayout = buttons.map((entry, index) => (
     <Button
       key={entry.name}
